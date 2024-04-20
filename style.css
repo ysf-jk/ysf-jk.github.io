@@ -8,14 +8,3 @@
         display: flex;
     }
 }
-/*
-@media (max-width: 727px){
-    .breakL2{
-        display: grid;
-    }
-}
-@media not (max-width: 727px){
-    .breakL2{
-        display: flex;
-    }
-}*/
