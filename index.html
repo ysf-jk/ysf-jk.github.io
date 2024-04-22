@@ -2,113 +2,101 @@
 <html lang="ja">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="./style.css">
-    <title>YSF情報工学部ホームページ トップ</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="./style.css">
+	<title>YSF情報工学部ホームページ トップ</title>
 </head>
-<div style="background: url(./imgs/情.png);">
-    <h1><a href="./index.html" style="text-decoration: none; color: #000000;">情報工学部</a></h1>
-    <hr style="margin: 0px;">
-    <!--タブ-->
-    <div style="display: flex;">
-        <div class="breakL1">
-            <div style="display: flex;">
-                <div style="line-height:10px; padding: 0px; margin-top: 8px;">
-                    <span style="padding-left: 30px;"></span><a href="./index.html"
-                        style="background: #ffffff88;">ホーム</a>
-                </div>
-            </div>
-            <div style="display: flex;">
-                <div style="line-height:10px; padding: 0px; margin-top: 8px;">
-                    <span style="padding-left: 30px;"></span><a href="./info.html"
-                        style="background: #ffffff88;">情報工学部について</a>
-                </div>
-            </div>
-            <div style="display: flex;">
-                <div style="line-height:10px; padding: 0px; margin-top: 8px;">
-                    <span style="padding-left: 30px;"></span><a href="./soukousai.html"
-                        style="background: #ffffff88;">蒼煌祭(文化祭)</a>
-                </div>
-            </div>
-        </div>
-        <div class="breakL1">
-            <div style="display: flex;">
-                <div style="line-height:10px; padding: 0px; margin-top: 8px;">
-                    <span style="padding-left: 30px;"></span><a href="./projects.html"
-                        style="background: #ffffff88;">ゲーム配布</a>
-                </div>
-            </div>
-            <div style="display: flex;">
-                <div style="line-height:10px; padding: 0px; margin-top: 8px;">
-                    <span style="padding-left: 30px;"></span><a href="./log.html" style="background: #ffffff88;">ログ</a>
-                </div>
-            </div>
-            <div style="display: flex;">
-                <div style="line-height:10px; padding: 0px; margin-top: 8px;">
-                    <span style="padding-left: 30px;"></span><a
-                        href="https://script.google.com/macros/s/AKfycbxRT9diOY22hSc-PDCMXMf6w-pg9qrX0koeEpDVAdPy3sJeW_h8pYUU5qo9nr0A8nY/exec"
-                        style="background: #ffffff88;">Tea or Coffee</a>
-                </div>
-            </div>
-        </div>
-    </div>
+<body><div style="background: url(./imgs/情.png);">
+	<h1><a href="./index.html" style="text-decoration: none; color: #000000;">情報工学部</a></h1>
+	<hr style="margin: 0px;">
+	<!--タブ-->
+	<div style="display: flex;">
+		<div class="breakL1">
+			<div style="display: flex;">
+				<div style="line-height:10px; padding: 0px; margin-top: 8px;">
+					<span style="padding-left: 30px;"></span><a href="#" onclick="showContent('./main.html')"
+						style="background: #ffffff88;">ホーム</a>
+				</div>
+			</div>
+			<div style="display: flex;">
+				<div style="line-height:10px; padding: 0px; margin-top: 8px;">
+					<span style="padding-left: 30px;"></span><a href="#" onclick="showContent('./info.html')"
+						style="background: #ffffff88;">情報工学部について</a>
+				</div>
+			</div>
+			<div style="display: flex;">
+				<div style="line-height:10px; padding: 0px; margin-top: 8px;">
+					<span style="padding-left: 30px;"></span><a href="#" onclick="showContent('./soukousai.html')"
+						style="background: #ffffff88;">蒼煌祭(文化祭)</a>
+				</div>
+			</div>
+		</div>
+		<div class="breakL1">
+			<div style="display: flex;">
+				<div style="line-height:10px; padding: 0px; margin-top: 8px;">
+					<span style="padding-left: 30px;"></span><a href="#" onclick="showContent('./projects.html')"
+						style="background: #ffffff88;">ゲーム配布</a>
+				</div>
+			</div>
+			<div style="display: flex;">
+				<div style="line-height:10px; padding: 0px; margin-top: 8px;">
+					<span style="padding-left: 30px;"></span><a href="#" onclick="showContent('./log.html')"
+						style="background: #ffffff88;">ログ</a>
+				</div>
+			</div>
+			<div style="display: flex;">
+				<div style="line-height:10px; padding: 0px; margin-top: 8px;">
+					<span style="padding-left: 30px;"></span><a
+						href="https://script.google.com/macros/s/AKfycbxRT9diOY22hSc-PDCMXMf6w-pg9qrX0koeEpDVAdPy3sJeW_h8pYUU5qo9nr0A8nY/exec"
+						style="background: #ffffff88;">Tea or Coffee</a>
+				</div>
+			</div>
+		</div>
+	</div>
 
-    <hr style="margin: 8px;">
-    <!--<br>-->
-    <h2>活動内容</h2>
-    <p><span
-            style="background: #ffffff88;">もともとは競技プログラミングのみでしたが、最近はUnity等でゲームを制作したり、任意の言語でアプリケーションを作っています。<br>蒼煌祭では任意でゲームを製作し、展示しています。</span>
-    </p>
-    <br>
-    <h2>関連リンク</h2>
-    <div>
-        <div style="padding-bottom: 20px;"><!--高校-->
-            <a href="https://www.edu.city.yokohama.lg.jp/school/hs/sfh/" target="_blank" rel="noopener noreferrer"><img
-                    style="background:white; line-height:0;"
-                    src="https://www.edu.city.yokohama.lg.jp/school/hs/sfh/designs/design06_blue/images/logo.png"
-                    alt="横浜市立横浜サイエンスフロンティア高等学校公式ホームページ">
-            </a>
-            <a href="https://www.edu.city.yokohama.lg.jp/school/hs/sfh/" target="_blank" rel="noopener noreferrer">
-                <p style="line-height:1.3; margin-top: 0px;"><span
-                        style="background: #ffffff88;">[横浜市立横浜サイエンスフロンティア高等学校公式ホームページ]</span></p>
-            </a>
-        </div>
-        <div style="padding-bottom: 20px;"><!--中学-->
-            <a href="https://www.edu.city.yokohama.lg.jp/school/jhs/hs-sf/" target="_blank"
-                rel="noopener noreferrer"><img style="background:white; line-height:0;"
-                    src="https://www.edu.city.yokohama.lg.jp/school/jhs/hs-sf/designs/design02_blue/images/logo.png"
-                    alt="横浜市立横浜サイエンスフロンティア高等学校附属中学校公式ホームページ"></a>
-            <a href="https://www.edu.city.yokohama.lg.jp/school/jhs/hs-sf/" target="_blank" rel="noopener noreferrer">
-                <p style="line-height:1.3; margin-top: 0px;"><span
-                        style="background: #ffffff88;">[横浜市立横浜サイエンスフロンティア高等学校附属中学校公式ホームページ]</span></p>
-            </a>
-        </div>
-        <div style="padding-bottom: 20px;"><!--at wiki-->
-            <a href="https://w.atwiki.jp/ysfh/" target="_blank" rel="noopener noreferrer"><img
-                    style="background:white; line-height:0;"
-                    src="https://img.atwiki.jp/ysfh/icon/88b253b5a862bda10fc654830004303d"
-                    alt="横浜市立横浜サイエンスフロンティア高校生・中学校生・卒業生による非公式Wiki"></a>
-            <a href="https://w.atwiki.jp/ysfh/" target="_blank" rel="noopener noreferrer">
-                <p style="line-height:1.3; margin-top: 0px;"><span
-                        style="background: #ffffff88;">[横浜市立横浜サイエンスフロンティア高校生・中学校生・卒業生による非公式Wiki]</span></p>
-            </a>
-        </div>
-        <div style="padding-bottom: 20px;"><!--YSFJK twitter-->
-            <a href="https://twitter.com/ysf_jk_official" target="_blank" rel="noopener noreferrer"><img
-                    style="line-height:0; border-radius:50%;"
-                    src="https://pbs.twimg.com/profile_images/1126401683754340352/VncpoXlp_400x400.jpg"
-                    alt="YSF情報工学部 公式Twitter"></a>
-            <a href="https://twitter.com/ysf_jk_official" target="_blank" rel="noopener noreferrer">
-                <p style="line-height:1.3; margin-top: 0px;"><span style="background: #ffffff88;">[YSF情報工学部
-                        公式Twitter]</span></p>
-            </a>
-            <a class="twitter-timeline" data-width="500" data-height="700"
-                href="https://twitter.com/ysf_jk_official?ref_src=twsrc%5Etfw">Tweets by YSF 情報工学部</a>
-            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-        </div>
-    </div>
-    <p style="background: white; font-size: 15pt; margin: 0px; text-align: center;">© 2024 Yokohama Science Frontier
-        High School/ Junior High School Computer Science club&nbsp;&nbsp;All rights reserved.</p>
+	<hr style="margin: 8px;">
+	<!--<br>-->
+	<div id="content"></div>
+	<p id="copyright" style="background: white; font-size: 15pt; margin: 0px; text-align: center;">© 2024 Yokohama Science Frontier High School/ Junior High School Computer Science club&nbsp;&nbsp;All rights reserved.</p>
+	<script>
 
+		// ページが読み込まれたとき
+		window.onload = function(){
+				showContent("./main.html", true);
+		};
+
+		async function showContent(url, fload){
+			try{
+				// レスポンス取得処理
+				const response = await fetch(url);
+				if(!response.ok){
+					throw new Error("ネットワークむり");
+				}
+
+				// レスポンス内容をテキストに変換
+				const data = await response.text();
+
+				// 挿入
+				document.getElementById("content").innerHTML = data;
+
+				// コピーライトの表示位置設定
+				var copyright = document.getElementById("copyright");
+				if(document.body.scrollHeight - copyright.offsetHeight > window.innerHeight || fload){
+					// 通常
+					copyright.style.position = "";
+					copyright.style.bottom = "";
+				}
+				else{
+					// 画面の下に固定表示
+					copyright.style.position = "fixed";
+					copyright.style.bottom = "0";
+				}
+			}
+			catch (error){
+				console.error('えらー:', error.message);
+			};
+		}
+	</script>
+</div></body>
 </html>
