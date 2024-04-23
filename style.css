@@ -8,3 +8,6 @@
         display: flex;
     }
 }
+body {
+    overflow-y: scroll;
+}

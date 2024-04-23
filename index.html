@@ -59,44 +59,6 @@
 	<!--<br>-->
 	<div id="content"></div>
 	<p id="copyright" style="background: white; font-size: 15pt; margin: 0px; text-align: center;">© 2024 Yokohama Science Frontier High School/ Junior High School Computer Science club&nbsp;&nbsp;All rights reserved.</p>
-	<script>
-
-		// ページが読み込まれたとき
-		window.onload = function(){
-				showContent("./main.html", true);
-		};
-
-		async function showContent(url, fload){
-			try{
-				// レスポンス取得処理
-				const response = await fetch(url);
-				if(!response.ok){
-					throw new Error("ネットワークむり");
-				}
-
-				// レスポンス内容をテキストに変換
-				const data = await response.text();
-
-				// 挿入
-				document.getElementById("content").innerHTML = data;
-
-				// コピーライトの表示位置設定
-				var copyright = document.getElementById("copyright");
-				if(document.body.scrollHeight - copyright.offsetHeight > window.innerHeight || fload){
-					// 通常
-					copyright.style.position = "";
-					copyright.style.bottom = "";
-				}
-				else{
-					// 画面の下に固定表示
-					copyright.style.position = "fixed";
-					copyright.style.bottom = "0";
-				}
-			}
-			catch (error){
-				console.error('えらー:', error.message);
-			};
-		}
-	</script>
+	<script src="index_script.js"></script>
 </div></body>
 </html>
