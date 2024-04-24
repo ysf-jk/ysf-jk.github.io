@@ -9,7 +9,7 @@
     }
 }
 #tab{
-	min-height: 18px;
+	min-height: 100px;
 }
 body {
     overflow-y: scroll;

@@ -14,8 +14,8 @@ window.addEventListener("DOMContentLoaded", async function(){
 		var data = await response.text();
 
 		// 挿入
-		var tab = document.getElementById("tab");
-		tab.innerHTML = data;
+		var head = document.getElementById("head");
+		head.innerHTML = data;
 
 		// 画面更新
 		position_update();
