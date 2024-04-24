@@ -8,6 +8,16 @@
         display: flex;
     }
 }
+#tab{
+	min-height: 18px;
+}
 body {
     overflow-y: scroll;
+	background: url(./imgs/情.png);
+}
+#copyright{
+	background: white;
+	font-size: 15pt;
+	margin: 0px;
+	text-align: center;
 }

@@ -1,25 +1,21 @@
 // ページが読み込まれたとき
-window.addEventListener("load", function(){
-	showContent("./main.html");
-	window.addEventListener("resize", function(){
-		position_update();
-	});
-});
-
-async function showContent(url){
+window.addEventListener("DOMContentLoaded", async function(){
 	try{
 		// レスポンス取得処理
-		const response = await fetch(url);
+		var response = await fetch("head.html");
 		if(!response.ok){
-			throw new Error("ネットワークむり");
+			response = await fetch("404.html");
+			if(!response.ok){
+				throw new Error("ネットワークむり");
+			}
 		}
 
 		// レスポンス内容をテキストに変換
-		const data = await response.text();
+		var data = await response.text();
 
 		// 挿入
-		var content = document.getElementById("content");
-		content.innerHTML = data;
+		var tab = document.getElementById("tab");
+		tab.innerHTML = data;
 
 		// 画面更新
 		position_update();
@@ -39,11 +35,15 @@ async function showContent(url){
 				position_update();
 			});
 		});
+
+		window.addEventListener("resize", function(){
+			position_update();
+		});
 	}
 	catch (error){
 		console.error('えらー:', error.message);
 	};
-}
+});
 
 function position_update(){
 	
