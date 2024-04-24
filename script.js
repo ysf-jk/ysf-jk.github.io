@@ -2,7 +2,7 @@
 window.addEventListener("DOMContentLoaded", async function(){
 	try{
 		// レスポンス取得処理
-		var response = await fetch("head.html");
+		var response = await fetch("/head.html");
 		if(!response.ok){
 			response = await fetch("404.html");
 			if(!response.ok){
