@@ -8,12 +8,15 @@
         display: flex;
     }
 }
-#tab{
+#head{
 	min-height: 100px;
 }
 body {
     overflow-y: scroll;
-	background: url(./imgs/情.png);
+	background: url(/imgs/情.png);
+}
+.url{
+	background: #ffffff88;
 }
 #copyright{
 	background: white;
