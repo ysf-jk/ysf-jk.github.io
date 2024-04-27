@@ -8,15 +8,53 @@
 	<title>YSFJK ログ</title>
 </head>
 <body>
-	<div id="head"></div><div style="padding-bottom: 15px;">
-		<h2>サイトの記録的な何か(3日坊主の可能性もある)</h2>
-		<div style="background: #ffffff88; padding-left: 70px;">
-			<p style="margin-top: 0px;">2024/04/21 404 NOT FOUNDページを追加。</p>
-			<p style="margin-top: 0px;">2024/04/21 Twitterリンクの一部がysf at wikiのURLになっていたのを修正。スマホなど画面幅が狭い時リンクが重なる問題を修正。</p>
-			<p style="margin-top: 0px;">2024/04/21 リンク変更。表記ミスの修正。配布ページの情報の追加。</p>
-			<p style="margin-top: 0px;">2024/04/20 サイト公開</p>
-		</div>
-	</div>
+	<div id="head"></div>
+	<div id="diary"></div>
 	<p id="copyright">© 2024 Yokohama Science Frontier High School/ Junior High School Computer Science club&nbsp;&nbsp;All rights reserved.</p>
+	<script>
+		window.onload = async function(){
+			var content = document.getElementById("diary");
+			try{
+				var response = await fetch("./diary.csv");
+				console.log(response);
+				if(!response.ok){
+					var message = document.createElement("div");
+					message.innerText = "データを取得できませんでした"
+					content.appendChild = message;
+					throw new Error("ネットワークむり[diary.csv]");
+				}
+				var data = await response.text();
+				dates = data.split("\n");
+				for(const date of dates){
+					console.log(date);
+					if(date < "20240420")break;
+					var diary = document.createElement("table");
+					var tr1 = document.createElement("tr");
+					var tr2 = document.createElement("tr");
+					var th = document.createElement("th");
+					th.innerText += date[0] + date[1] + date[2] + date[3] + "年" + date[4] + date[5] + "月" + date[6] + date[7] + "日　";
+					var td = document.createElement("td");
+					var response = await fetch("diary/" + date + ".txt");
+					if(response.ok){
+						var text = await response.text();
+						var tdIndex = text.indexOf("\n");
+						th.innerText += text.substring(0, tdIndex);
+						td.innerHTML = text.substring(tdIndex + 1);
+					}
+					else{
+						td.innerText = "見つかりませんでした…･ﾟ･(ﾉД`)･ﾟ･｡";
+					}
+					tr1.appendChild(th);
+					tr2.appendChild(td);
+					diary.appendChild(tr1);
+					diary.appendChild(tr2);
+					content.append(diary);
+				}
+			}
+			catch(error){
+				console.error("えらー");
+			}
+		}
+	</script>
 </body>
 </html>
