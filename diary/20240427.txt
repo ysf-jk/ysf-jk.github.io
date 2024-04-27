@@ -1,0 +1,2 @@
+ログを改良してみました
+古の技術を真似てcgiでログを作ろうと企みましたが<br>GitHubはサーバー側のそういう処理は無理みたいなので<br>JavaScriptでやってみました。<br>HTMLも<font size="5px" color="blue">つかえます</font>
