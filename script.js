@@ -51,10 +51,10 @@ function position_update(){
 	var height;
 	var copyright = document.getElementById("copyright");
 	if(copyright.style.position === "fixed"){
-		height = document.body.offsetHeight + 16/*一行の高さ*/ + copyright.offsetHeight;
+		height = document.body.offsetHeight + 16/*一行の高さ*/ + 100/*タブ分*/ + copyright.offsetHeight;
 	}
 	else{
-		height = document.body.offsetHeight + 16;
+		height = document.body.offsetHeight + 16 + 100;
 	}
 
 	// コピーライトの表示位置設定

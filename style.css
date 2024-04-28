@@ -1,38 +1,119 @@
+/*タブここから*/
 @media (max-width: 700px){
     .breakL1{
+		/*タブ3つ×2行*/
+		width: 100%;
         display: grid;
 		.url{
 			width: calc(100% / 3);
 			text-align: center;
+			margin-block: 4px;
+			line-height: 1;
 		}
     }
 }
 @media not (max-width: 700px){
     .breakL1{
+		/*タブ横並び*/
         display: flex;
 		.url{
-			margin-left: 15px;
-			margin-right: 15px;
+			margin: 8px;
 		}
     }
 }
 #head{
-	min-height: 100px;
-	white-space: nowrap;
+	position: absolute;
+	top: -100px;
+	width: 100%;
 	.row{
 		display: flex;
 	}
+	h1{
+		margin-top: 0px;
+		margin-bottom: 8px;
+		margin-inline: 10px;
+		height: 36px;
+		a{
+			color: #000000;
+			text-decoration: none; 
+		}
+	}
 }
-body {
+/*タブここまで*/
+
+body{
+	margin: 8px;
+	width: calc(100% - 8px);
+	min-width: 240px;
+	position: absolute;
+	top: 100px;
     overflow-y: scroll;
+	overflow-inline: 100px;
 	background: url(/imgs/情.png);
 }
 .url{
 	background: #ffffff88;
 }
+/*detailsここから*/
+details{
+	box-shadow: 3px 3px 4px black;
+	width: max-content;
+	max-width: 100%;
+}
+summary{
+	transition: 0.2s;
+}
+summary:hover{
+	background-color: #00000012;
+	cursor: pointer;
+}
+details[open]{
+	width: calc(100% - 8px);
+}
+/*detailsここまで*/
+
+
+/*readme*/
+.readme1{
+	padding-inline: min((100% - 300px) / 2, 30px);
+	max-width: 1200px;
+	min-width: 300px;
+	iframe{
+		width: 90%;
+		height: 320px;
+		background: white;
+	}
+}
+.readme2{
+	padding-inline: min((100% - 300px) / 2, 30px);
+	max-width: 800px;
+	min-width: 300px;
+	iframe{
+		padding-inline: 10px;
+		width: calc(90% - 20px);
+		height: 250px;
+		background: white;
+	}
+}
+
+/*著作権表示*/
 #copyright{
+	width: 100%;
 	background: white;
 	font-size: 15pt;
-	margin: 0px;
 	text-align: center;
+	margin-bottom: 0px;
+	margin-inline: 0px;
+}
+
+/*ログ*/
+#diary{
+	table{
+		background-color: #ffffff88;
+		th{
+			text-align: left;
+			line-height: 2;
+			padding-top: 16px;
+		}
+	}
 }
