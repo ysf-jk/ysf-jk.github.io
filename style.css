@@ -1,37 +1,94 @@
 /*タブここから*/
-@media (max-width: 700px){
-    .breakL1{
-		/*タブ3つ×2行*/
-		width: 100%;
-        display: grid;
-		.url{
-			width: calc(100% / 3);
-			text-align: center;
-			margin-block: 4px;
-			line-height: 1;
-		}
-    }
-}
-@media not (max-width: 700px){
-    .breakL1{
-		/*タブ横並び*/
-        display: flex;
-		.url{
-			margin: 8px;
-		}
-    }
-}
 #head{
-	width: 100%;
-	.row{
+	height: 80px;
+	width: 95%;
+	min-width: 300px;
+	text-align: center;
+	white-space: nowrap;
+	user-select: none;
+	header{
+		height: 100%;
+		width: 100%;
 		display: flex;
 	}
-	h1{
-		padding: 10px;
-		margin-top: 0px;
-		margin-bottom: 8px;
-		margin-inline: 10px;
-		height: 36px;
+	#name{
+		transition: 0.1s;
+		box-sizing: border-box;
+		border: 3px solid #018;
+		border-right: 0;
+		padding-block: auto;
+		height: 100%;
+		width: 25%;
+		max-width: 240px;
+		text-decoration: none;
+		justify-content: center;
+		align-items: center;
+		display: flex;
+		background-color: white;
+		div{
+			text-align: center;
+			line-height: 32px;
+			font-size: 28px;
+			font-weight: 600;
+			color: black;
+		}
+	}
+	#name:hover{
+		background-color: whitesmoke;
+	}
+	#panel{
+		box-sizing: border-box;
+		border: 2px solid #018;
+		height: 100%;
+		width: 75%;
+		max-width: 480px;
+		background-color:#018;
+	}
+	ul{
+		display: flex;
+		box-sizing: border-box;
+		padding: 0;
+		margin: 0;
+		height: 50%;
+		width: 100%;
+		list-style-type: none;
+	}
+	li{
+		box-sizing: border-box;
+		border: 1px solid #00000000;
+		height: 100%;
+		width: calc(100% / 3);
+		a{
+			transition: 0.2s;
+			display: block;
+			height: 100%;
+			width: 100%;
+			background-color: #07D;
+			text-decoration: none;
+			color: #BEF;
+			line-height: 36px;
+			font-size: 24px;
+			font-family: monospace;
+		}
+		a:hover{
+			background-color: #02A;
+		}
+		#coffee{
+			color: brown; background-color: #fc8;
+		}
+		#coffee:hover{
+			color: #fea;
+		}
+	}
+}
+@media(max-width: 680px){
+	#YSFJK2{
+		display: none;
+	}
+}
+@media(min-width: 681px){
+	#YSFJK1{
+		display: none;
 	}
 }
 /*タブここまで*/
@@ -40,7 +97,6 @@ body{
 	margin: 8px;
 	width: calc(100% - 8px);
 	min-width: 240px;
-	position: absolute;
     overflow-y: scroll;
 	overflow-inline: 100px;
 	background: url(/imgs/情.png);
