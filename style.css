@@ -25,13 +25,11 @@
 		align-items: center;
 		display: flex;
 		background-color: white;
-		div{
-			text-align: center;
-			line-height: 32px;
-			font-size: 28px;
-			font-weight: 600;
-			color: black;
-		}
+		text-align: center;
+		line-height: 32px;
+		font-size: 28px;
+		font-weight: 600;
+		color: black;
 	}
 	#name:hover{
 		background-color: whitesmoke;
@@ -44,7 +42,7 @@
 		max-width: 480px;
 		background-color:#018;
 	}
-	ul{
+	#ul{
 		display: flex;
 		box-sizing: border-box;
 		padding: 0;
@@ -53,12 +51,12 @@
 		width: 100%;
 		list-style-type: none;
 	}
-	li{
+	#li{
 		box-sizing: border-box;
 		border: 1px solid #00000000;
 		height: 100%;
 		width: calc(100% / 3);
-		a{
+		#a{
 			transition: 0.2s;
 			display: block;
 			height: 100%;
@@ -70,7 +68,7 @@
 			font-size: 24px;
 			font-family: monospace;
 		}
-		a:hover{
+		#a:hover{
 			background-color: #02A;
 		}
 		#coffee{
