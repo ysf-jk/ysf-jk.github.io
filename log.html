@@ -9,6 +9,7 @@
 </head>
 <body>
 	<div id="head"></div>
+	<div id="counter" style="height: 20px;"></div>
 	<div id="diary"></div>
 	<p id="copyright">© 2024 Yokohama Science Frontier High School/ Junior High School Computer Science club&nbsp;&nbsp;All rights reserved.</p>
 	<script>
@@ -25,6 +26,13 @@
 				}
 				var data = await response.text();
 				dates = data.split("\n");
+				var count = 0;
+				var counter = document.getElementById("counter");
+				while(dates.length > 0 && dates[dates.length - 1].length < 8){
+					dates.pop();
+				}
+				dates.sort().reverse();
+				counter.innerText = count + " / " + dates.length;
 				for(const date of dates){
 					console.log(date);
 					if(date < "20240420")break;
@@ -38,7 +46,7 @@
 					if(response.ok){
 						var text = await response.text();
 						var tdIndex = text.indexOf("\n");
-						th.innerText += text.substring(0, tdIndex);
+						th.innerHTML += text.substring(0, tdIndex);
 						td.innerHTML = text.substring(tdIndex + 1);
 					}
 					else{
@@ -49,8 +57,11 @@
 					diary.appendChild(tr1);
 					diary.appendChild(tr2);
 					content.append(diary);
+					count ++;
+					counter.innerText = count + " / " + dates.length;
 					position_update();
 				}
+				counter.innerText += " conplete!"
 			}
 			catch(error){
 				console.error("えらー");

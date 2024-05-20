@@ -72,7 +72,16 @@
 			background-color: #02A;
 		}
 		#coffee{
-			color: brown; background-color: #fc8;
+			transition: 0.2s;
+			display: block;
+			height: 100%;
+			width: 100%;
+			text-decoration: none;
+			line-height: 36px;
+			font-size: 24px;
+			font-family: monospace;
+			color: brown;
+			background-color: #fc8;
 		}
 		#coffee:hover{
 			color: #fea;
