@@ -1,71 +1,72 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="./style.css">
-    <title>YSF情報工学部ホームページ ログ</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="/style.css">
+	<script src="/script.js"></script>
+	<title>YSFJK ログ</title>
 </head>
-<div style="background: url(./imgs/情.png);">
-    <h1><a href="./index.html" style="text-decoration: none; color: #000000;">情報工学部</a></h1>
-    <hr style="margin: 0px;">
-    <!--タブ-->
-    <div style="display: flex;">
-        <div class="breakL1">
-            <div style="display: flex;">
-                <div style="line-height:10px; padding: 0px; margin-top: 8px;">
-                    <span style="padding-left: 30px;"></span><a href="./index.html"
-                        style="background: #ffffff88;">ホーム</a>
-                </div>
-            </div>
-            <div style="display: flex;">
-                <div style="line-height:10px; padding: 0px; margin-top: 8px;">
-                    <span style="padding-left: 30px;"></span><a href="./info.html"
-                        style="background: #ffffff88;">情報工学部について</a>
-                </div>
-            </div>
-            <div style="display: flex;">
-                <div style="line-height:10px; padding: 0px; margin-top: 8px;">
-                    <span style="padding-left: 30px;"></span><a href="./soukousai.html"
-                        style="background: #ffffff88;">蒼煌祭(文化祭)</a>
-                </div>
-            </div>
-        </div>
-        <div class="breakL1">
-            <div style="display: flex;">
-                <div style="line-height:10px; padding: 0px; margin-top: 8px;">
-                    <span style="padding-left: 30px;"></span><a href="./projects.html"
-                        style="background: #ffffff88;">ゲーム配布</a>
-                </div>
-            </div>
-            <div style="display: flex;">
-                <div style="line-height:10px; padding: 0px; margin-top: 8px;">
-                    <span style="padding-left: 30px;"></span><a href="./log.html"
-                        style="background: #ffffff88;">ログ</a>
-                </div>
-            </div>
-            <div style="display: flex;">
-                <div style="line-height:10px; padding: 0px; margin-top: 8px;">
-                    <span style="padding-left: 30px;"></span><a
-                        href="https://script.google.com/macros/s/AKfycbxRT9diOY22hSc-PDCMXMf6w-pg9qrX0koeEpDVAdPy3sJeW_h8pYUU5qo9nr0A8nY/exec"
-                        style="background: #ffffff88;">Tea or Coffee</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <hr style="margin: 8px;">
-    <!--<br>-->
-    <div style="padding-bottom: 15px;">
-        <h2>サイトの記録的な何か(3日坊主の可能性もある)</h2>
-        <div style="background: #ffffff88; padding-left: 70px;">
-            <p style="margin-top: 0px;">2024/04/21 404 NOT FOUNDページを追加。</p>
-            <p style="margin-top: 0px;">2024/04/21 Twitterリンクの一部がysf at wikiのURLになっていたのを修正。スマホなど画面幅が狭い時リンクが重なる問題を修正。</p>
-            <p style="margin-top: 0px;">2024/04/21 リンク変更。表記ミスの修正。配布ページの情報の追加。</p>
-            <p style="margin-top: 0px;">2024/04/20 サイト公開</p>
-        </div>
-    </div>
-    <p style="background: white; font-size: 15pt; margin: 0px; text-align: center;">© 2024 Yokohama Science Frontier High School/ Junior High School Computer Science club&nbsp;&nbsp;All rights reserved.</p>
-
+<body>
+	<div id="head"></div>
+	<div id="counter" style="height: 20px;"></div>
+	<div id="diary"></div>
+	<p id="copyright">© 2024 Yokohama Science Frontier High School/ Junior High School Computer Science club&nbsp;&nbsp;All rights reserved.</p>
+	<script>
+		window.onload = async function(){
+			var content = document.getElementById("diary");
+			try{
+				var response = await fetch("./diary.csv");
+				console.log(response);
+				if(!response.ok){
+					var message = document.createElement("div");
+					message.innerText = "データを取得できませんでした"
+					content.appendChild = message;
+					throw new Error("ネットワークむり[diary.csv]");
+				}
+				var data = await response.text();
+				dates = data.split("\n");
+				var count = 0;
+				var counter = document.getElementById("counter");
+				while(dates.length > 0 && dates[dates.length - 1].length < 8){
+					dates.pop();
+				}
+				dates.sort().reverse();
+				counter.innerText = count + " / " + dates.length;
+				for(const date of dates){
+					console.log(date);
+					if(date < "20240420")break;
+					var diary = document.createElement("table");
+					var tr1 = document.createElement("tr");
+					var tr2 = document.createElement("tr");
+					var th = document.createElement("th");
+					th.innerText += date[0] + date[1] + date[2] + date[3] + "年" + date[4] + date[5] + "月" + date[6] + date[7] + "日　";
+					var td = document.createElement("td");
+					var response = await fetch("diary/" + date + ".txt");
+					if(response.ok){
+						var text = await response.text();
+						var tdIndex = text.indexOf("\n");
+						th.innerHTML += text.substring(0, tdIndex);
+						td.innerHTML = text.substring(tdIndex + 1);
+					}
+					else{
+						td.innerText = "見つかりませんでした…･ﾟ･(ﾉД`)･ﾟ･｡";
+					}
+					tr1.appendChild(th);
+					tr2.appendChild(td);
+					diary.appendChild(tr1);
+					diary.appendChild(tr2);
+					content.append(diary);
+					count ++;
+					counter.innerText = count + " / " + dates.length;
+					position_update();
+				}
+				counter.innerText += " conplete!"
+			}
+			catch(error){
+				console.error("えらー");
+			}
+		}
+	</script>
+</body>
 </html>

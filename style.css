@@ -1,10 +1,176 @@
-@media (max-width: 727px){
-    .breakL1{
-        display: grid;
-    }
+/*タブここから*/
+#head{
+	height: 80px;
+	width: 95%;
+	min-width: 300px;
+	text-align: center;
+	white-space: nowrap;
+	user-select: none;
 }
-@media not (max-width: 727px){
-    .breakL1{
-        display: flex;
-    }
+#head_inner{
+	height: 100%;
+	width: 100%;
+	display: flex;
+	#name{
+		transition: 0.1s;
+		box-sizing: border-box;
+		border: 3px solid #018;
+		border-right: 0;
+		padding-block: auto;
+		height: 100%;
+		width: 25%;
+		max-width: 240px;
+		text-decoration: none;
+		justify-content: center;
+		align-items: center;
+		display: flex;
+		background-color: white;
+		text-align: center;
+		line-height: 32px;
+		font-size: 28px;
+		font-weight: 600;
+		color: black;
+	}
+	#name:hover{
+		background-color: whitesmoke;
+	}
+	#panel{
+		box-sizing: border-box;
+		border: 2px solid #018;
+		height: 100%;
+		width: 75%;
+		max-width: 480px;
+		background-color:#018;
+	}
+	#ul{
+		display: flex;
+		box-sizing: border-box;
+		padding: 0;
+		margin: 0;
+		height: 50%;
+		width: 100%;
+		list-style-type: none;
+	}
+	#li{
+		box-sizing: border-box;
+		border: 1px solid #00000000;
+		height: 100%;
+		width: calc(100% / 3);
+		#a{
+			transition: 0.2s;
+			display: block;
+			height: 100%;
+			width: 100%;
+			background-color: #07D;
+			text-decoration: none;
+			color: #BEF;
+			line-height: 36px;
+			font-size: 24px;
+			font-family: monospace;
+		}
+		#a:hover{
+			background-color: #02A;
+		}
+		#coffee{
+			transition: 0.2s;
+			display: block;
+			height: 100%;
+			width: 100%;
+			text-decoration: none;
+			line-height: 36px;
+			font-size: 24px;
+			font-family: monospace;
+			color: brown;
+			background-color: #fc8;
+		}
+		#coffee:hover{
+			color: #fea;
+		}
+	}
+}
+@media(max-width: 680px){
+	#YSFJK2{
+		display: none;
+	}
+}
+@media(min-width: 681px){
+	#YSFJK1{
+		display: none;
+	}
+}
+/*タブここまで*/
+
+body{
+	margin: 8px;
+	width: calc(100% - 8px);
+	min-width: 240px;
+    overflow-y: scroll;
+	overflow-inline: 100px;
+	background: url(/imgs/情.png);
+}
+.url{
+	background: #ffffff88;
+}
+/*detailsここから*/
+details{
+	box-shadow: 3px 3px 4px black;
+	width: max-content;
+	max-width: 100%;
+}
+summary{
+	transition: 0.2s;
+}
+summary:hover{
+	background-color: #00000012;
+	cursor: pointer;
+}
+details[open]{
+	width: calc(100% - 8px);
+}
+/*detailsここまで*/
+
+
+/*readme*/
+.readme1{
+	padding-inline: min((100% - 300px) / 2, 30px);
+	max-width: 1200px;
+	min-width: 300px;
+	iframe{
+		width: 90%;
+		height: 320px;
+		background: white;
+	}
+}
+.readme2{
+	padding-inline: min((100% - 300px) / 2, 30px);
+	max-width: 800px;
+	min-width: 300px;
+	iframe{
+		padding-inline: 10px;
+		width: calc(90% - 20px);
+		height: 250px;
+		background: white;
+	}
+}
+
+/*著作権表示*/
+#copyright{
+	width: 100%;
+	background: white;
+	font-size: 15pt;
+	text-align: center;
+	margin-bottom: 0px;
+	margin-inline: 0px;
+}
+
+/*ログ*/
+#diary{
+	table{
+		background-color: #ffffff88;
+		th{
+			text-align: left;
+			line-height: 2;
+			padding-top: 16px;
+		}
+	}
 }
