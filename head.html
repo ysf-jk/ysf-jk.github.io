@@ -1,9 +1,92 @@
-<header id="head_inner">
+<header id="head_inner" style="
+	height: 100%;
+	width: 100%;
+	display: flex;">
+	<style>
+	#name{
+		transition: 0.1s;
+		box-sizing: border-box;
+		border: 3px solid #018;
+		border-right: 0;
+		padding-block: auto;
+		height: 100%;
+		width: 25%;
+		max-width: 240px;
+		text-decoration: none;
+		justify-content: center;
+		align-items: center;
+		display: flex;
+		background-color: white;
+		text-align: center;
+		line-height: 32px;
+		font-size: 28px;
+		font-weight: 600;
+		color: black;
+	}
+	#name:hover{
+		background-color: whitesmoke;
+	}
+	#panel{
+		box-sizing: border-box;
+		border: 2px solid #018;
+		height: 100%;
+		width: 75%;
+		max-width: 480px;
+		background-color:#018;
+	}
+	#ul{
+		display: flex;
+		box-sizing: border-box;
+		padding: 0;
+		margin: 0;
+		height: 50%;
+		width: 100%;
+		list-style-type: none;
+	}
+	#li{
+		box-sizing: border-box;
+		border: 1px solid #00000000;
+		height: 100%;
+		width: calc(100% / 3);
+	}
+	</style>
 	<a id="name" href="/">
 		<div id="YSFJK1">YSF<wbr></wbr>JK</div>
 		<div id="YSFJK2">YSF<wbr></wbr>情報工学部</div>
 	</a>
 	<div id="panel">
+		<style>
+			#a{
+				transition: 0.2s;
+				display: block;
+				height: 100%;
+				width: 100%;
+				background-color: #07D;
+				text-decoration: none;
+				color: #BEF;
+				line-height: 36px;
+				font-size: 24px;
+				font-family: monospace;
+			}
+			#a:hover{
+				background-color: #02A;
+			}
+			#coffee{
+				transition: 0.2s;
+				display: block;
+				height: 100%;
+				width: 100%;
+				text-decoration: none;
+				line-height: 36px;
+				font-size: 24px;
+				font-family: monospace;
+				color: brown;
+				background-color: #fc8;
+			}
+			#coffee:hover{
+				color: #fea;
+			}
+		</style>
 		<ul id="ul">
 			<li id="li"><a id="a" href="/index.html">HOME</a></li>
 			<li id="li"><a id="a" href="/info.html">INFO</a></li>
