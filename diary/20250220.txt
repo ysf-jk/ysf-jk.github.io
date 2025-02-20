@@ -1,0 +1,15 @@
+サイバーボランティアに行きました
+2月15日に矢向小学校で行われたサイバーボランティアに行きました。<br>
+6年生、4年生に行いました。<br>
+<a href="https://www.edu.city.yokohama.lg.jp/school/hs/sfh/index.cfm/31,0,61,html?20151111151630995" target="_blank" rel="noopener noreferrer" class="url">⇒[学校公式ホームページ>Diary]</a><br>
+
+<!--
+    HTML使えるの超助かる
+    -->
+<img style="line-height:0; width: 80%; max-width: 480px;" src="../imgs/サイバーボランティア用スライド 0.png" alt="使用したスライドの一画面">
+
+<img style="line-height:0; width: 80%; max-width: 480px;" src="../imgs/サイバーボランティア用スライド 1.png" alt="使用したスライドの一画面"><br>
+
+<img style="line-height:0; width: 80%; max-width: 480px;" src="../imgs/サイバーボランティア用スライド 2.png" alt="使用したスライドの一画面">
+
+<img style="line-height:0; width: 80%; max-width: 480px;" src="../imgs/サイバーボランティア用スライド 3.png" alt="使用したスライドの一画面"><br>
