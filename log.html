@@ -40,13 +40,15 @@
 					var tr1 = document.createElement("tr");
 					var tr2 = document.createElement("tr");
 					var th = document.createElement("th");
-					th.innerText += date[0] + date[1] + date[2] + date[3] + "年" + date[4] + date[5] + "月" + date[6] + date[7] + "日　";
+					//th.innerHTML += "<a href=\"./logViewer.html?" + date + "\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"url\">🗗 </a>";
+					th.innerText += date[0] + date[1] + date[2] + date[3] + "年" + date[4] + date[5] + "月" + date[6] + date[7] + "日　"
 					var td = document.createElement("td");
 					var response = await fetch("diary/" + date + ".txt");
 					if(response.ok){
 						var text = await response.text();
 						var tdIndex = text.indexOf("\n");
 						th.innerHTML += text.substring(0, tdIndex);
+						th.innerHTML += "<a href=\"./logViewer.html?" + date + "\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"url\">🗗 </a>";
 						td.innerHTML = text.substring(tdIndex + 1);
 					}
 					else{
