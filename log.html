@@ -48,7 +48,7 @@
 						var text = await response.text();
 						var tdIndex = text.indexOf("\n");
 						th.innerHTML += text.substring(0, tdIndex);
-						th.innerHTML += "<a href=\"./logViewer.html?" + date + "\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"url\">🗗 </a>";
+						th.innerHTML += " <a href=\"./logViewer.html?" + date + "\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"url\">🗗 </a>";
 						td.innerHTML = text.substring(tdIndex + 1);
 					}
 					else{
