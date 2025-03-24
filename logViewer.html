@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="/style.css">
+	<script src="/script.js"></script>
+	<title>YSFJK ログビュアー</title>
+</head>
+<body>
+	<div id="head"></div>
+	<div id="counter" style="height: 20px;"></div>
+	<div id="diary"></div>
+	<p id="copyright">© 2024 Yokohama Science Frontier High School/ Junior High School Computer Science club&nbsp;&nbsp;All rights reserved.</p>
+	<script>
+		window.onload = async function(){
+			var content = document.getElementById("diary");
+			try{
+				var response = await fetch("./diary.csv");
+				console.log(response);
+				if(!response.ok){
+					var message = document.createElement("div");
+					message.innerText = "データを取得できませんでした"
+					content.appendChild = message;
+					throw new Error("ネットワークむり[diary.csv]");
+				}
+				var data = await response.text();
+				dates = getUrlQueries();
+				console.log(dates);//data.split("\n");
+				var count = 0;
+				var counter = document.getElementById("counter");
+				while(dates.length > 0 && dates[dates.length - 1].length < 8){
+					dates.pop();
+				}
+				dates.sort().reverse();
+				counter.innerText = "読み込み中...";
+
+				for(const date of dates){
+					counter.innerText = "LOG: " + date + " を読み込み中...(" + count + "/" + dates.length + ")";
+					loader(String(date));
+					count++;
+				}
+
+				counter.innerText = "conplete!"
+			}
+			catch(error){
+				console.error("えらー :\n" + error);
+			}
+		}
+
+		async function loader(date){
+			var content = document.getElementById("diary");
+			console.log(date);
+			if(date < "20240420")return;
+			var diary = document.createElement("table");
+			var tr1 = document.createElement("tr");
+			var tr2 = document.createElement("tr");
+			var th = document.createElement("th");
+			th.innerText += date[0] + date[1] + date[2] + date[3] + "年" + date[4] + date[5] + "月" + date[6] + date[7] + "日　";
+			var td = document.createElement("td");
+			var response = await fetch("diary/" + date + ".txt");
+			if(response.ok){
+				var text = await response.text();
+				var tdIndex = text.indexOf("\n");
+				th.innerHTML += text.substring(0, tdIndex);
+				td.innerHTML = text.substring(tdIndex + 1);
+			}
+			else{
+				td.innerText = "見つかりませんでした…･ﾟ･(ﾉД`)･ﾟ･｡";
+			}
+			tr1.appendChild(th);
+			tr2.appendChild(td);
+			diary.appendChild(tr1);
+			diary.appendChild(tr2);
+			content.append(diary);
+			//count ++;
+			//counter.innerText = count + " / " + dates.length;
+			position_update();
+		}
+
+		function getUrlQueries() {
+  			var queryStr = window.location.search.slice(1);  // 文頭?を除外
+      		queries = [];
+      
+  			// クエリがない場合は空のオブジェクトを返す
+  			if (!queryStr) {
+				window.location.href = './log.html';
+  				return queries;
+  			}
+  
+  			//// クエリ文字列を & で分割して処理
+  			//queryStr.split('&').forEach(function(queryStr) {
+    		//// = で分割してkey,valueをオブジェクトに格納
+    		//var queryArr = queryStr.split('=');
+    		//queries[queryArr[0]] = queryArr[1];
+  			//});
+			queries = queryStr.split('&');
+  
+  			return queries;
+		}
+	</script>
+</body>
+</html>
